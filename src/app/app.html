@@ -1,16 +1,37 @@
-<!--HEADER-->
-<header class="uk-box-shadow-small uk-section-secondary eni-header">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar UIkit Centrée et Corrigée</title>
+  <!-- Chargement du CSS UIkit -->
+</head>
+<body>   <!--
+        STRUCTURE CORRIGÉE : Utilise les trois blocs (left, center, right)
+        pour garantir l'alignement parfait du contenu central.
+    -->
+<header class="uk-section-default uk-padding-remove-vertical">
   <div class="uk-container uk-container-expand">
-    <nav class="uk-navbar" id="navbar" data-uk-navbar>
+    <nav class="uk-navbar-container" id="navbar" uk-navbar>
+
+      <!-- 1. BLOC DE GAUCHE : Logo/Lien principal "Articles" -->
       <div class="uk-navbar-center">
-        <a class="uk-navbar-item uk-logo" href="articles" >Articles</a>
-          <a class="uk-navbar-item log uk-logo" href="inscription">Inscription</a>
-          <a class="uk-navbar-item log uk-logo" href="connexion">Connexion</a>
+        <a class="uk-navbar-item uk-logo" href="articles">Articles</a>
       </div>
+
+      <!-- 3. BLOC DE DROITE : Actions "Connexion" et "Inscription" -->
+      <div class="uk-navbar-right">
+        <div class="log uk-navbar-item uk-visible@s">
+          <!-- Utilisation de classes UIkit standard pour les boutons -->
+          <a class="uk-button uk-button-text uk-margin-right" href="inscription">Sign In</a>
+          <a class="uk-button uk-button-primary" href="connexion">Log In</a>
+        </div>
+        <!-- Hamburger menu pour mobile -->
+        <a class="uk-navbar-toggle uk-hidden@s" href="#offcanvas-nav" uk-toggle></a>
+      </div>
+
     </nav>
   </div>
 </header>
-<!--/HEADER-->
-<body>
-<router-outlet />
+<router-outlet/>
 </body>
