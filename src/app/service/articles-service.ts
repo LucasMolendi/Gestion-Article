@@ -12,4 +12,7 @@ export class ArticlesService {
   getArticles(): Observable<any> {
     return this.http.get<any>("http://localhost:3000/articles");
   }
+  DeleteArticle(id: number): Observable<any> {
+    return this.http.delete(`http://localhost:3000/articles/${id}`);
+  }
 }

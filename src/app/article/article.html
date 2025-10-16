@@ -17,7 +17,7 @@
             <p>{{ article.desc }}</p>
             <!-- Lien vers la page de détail -->
             <button [routerLink]="['/article', article.id]">Voir l'article</button>
-            <button (click)="delete(article.id)" ">supprimer l'article</button>
+            <button (click)="DeleteArticle(article.id)">supprimer l'article</button>
           </div>
         </div>
       </div>

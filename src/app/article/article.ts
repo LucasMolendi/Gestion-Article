@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NgForOf, NgStyle} from '@angular/common';
+import {NgStyle} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {ArticlesService} from '../service/articles-service';
 import {RouterLink} from '@angular/router';
@@ -10,7 +10,6 @@ import {RouterLink} from '@angular/router';
   imports: [
     NgStyle,
     HttpClientModule,
-    NgForOf,
     RouterLink
   ],
   templateUrl: './article.html',
@@ -20,7 +19,6 @@ export class Articles {
   public articles: any[] = [];
 
   constructor(private articlesServices: ArticlesService) {
-
   }
 
   onClickCallApi() {
@@ -36,5 +34,16 @@ export class Articles {
         }
       }
     });
+  }
+  DeleteArticle(id: number): void {
+    this.articlesServices.DeleteArticle(id).subscribe({
+      next: () => {
+        // Filtrer la liste locale pour retirer l’article supprimé
+        this.articles = this.articles.filter(article => article.id !== id);
+      },
+      error: (err) => {
+        console.error('Erreur lors de la suppression :', err);
+      }
+    })
   }
 }
