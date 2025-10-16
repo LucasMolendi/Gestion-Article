@@ -1,10 +1,14 @@
-import {Component} from '@angular/core';
+import {Component, signal} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 export class User {
-  public name: string = ""
   public email: string = ""
   public password: string = ""
+  public passwordconfirm: string = ""
+  public phone: string = ""
+  public city: string = ""
+  public citycode: string = ""
+  public pseudo: string = ""
 }
 
 @Component({
@@ -17,8 +21,11 @@ export class User {
 })
 export class Inscription {
   public user: User = new User()
-
+  public passwordMismatch = signal<boolean>(false);
   sendFormData() {
-    alert(JSON.stringify(this.user));
+    if (this.user.password !== this.user.passwordconfirm) {
+      this.passwordMismatch.set(true);
+      console.log("mod de password mismatch");
+    }
   }
 }

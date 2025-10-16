@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Inscription } from './inscription';
+import Inscription from './inscription';
 
 describe('Inscription', () => {
   let component: Inscription;
