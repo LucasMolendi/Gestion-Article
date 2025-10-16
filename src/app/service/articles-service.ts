@@ -15,4 +15,7 @@ export class ArticlesService {
   DeleteArticle(id: number): Observable<any> {
     return this.http.delete(`http://localhost:3000/articles/${id}`);
   }
+  SendId(email: string, password: string){
+    return this.http.post('http://localhost:3000/login', {email, password});
+  }
 }
