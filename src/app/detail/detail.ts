@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-detail',
   templateUrl: './detail.html'
 })
-export class Detail implements OnInit {
+export class ArticleDetail implements OnInit {
   articleId: string | null = null;
 
   constructor(private route: ActivatedRoute) {}
