@@ -16,6 +16,9 @@ import {RouterLink} from '@angular/router';
   styleUrl: './article.scss'
 })
 export class Articles {
+  title(title: any): any {
+      throw new Error("Method not implemented.");
+  }
   public articles: any[] = [];
 
   constructor(private articlesServices: ArticlesService) {

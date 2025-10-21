@@ -9,16 +9,17 @@
               <div class="uk-margin">
                 <div class="uk-inline uk-width-1-1">
                   <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                  <input class="uk-input uk-form-large" type="text">
+                  <input class="uk-input uk-form-large" [(ngModel)]="this.email " name="email" type="text">
                 </div>
               </div>
               <div class="uk-margin">
                 <div class="uk-inline uk-width-1-1">
                   <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                  <input class="uk-input uk-form-large" type="password">
+                  <input class="uk-input uk-form-large"[(ngModel)]="this.password" name="password" type="password">
                 </div>
               </div>
               <div class="uk-margin">
+                <p style="color: lightgreen">{{this.message}}</p>
                 <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" (click)="onLogin()">Login</button>
               </div>
               <div class="uk-text-small uk-text-center">
