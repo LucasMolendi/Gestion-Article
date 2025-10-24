@@ -5,4 +5,8 @@ création d'une project gestion article qui a pour but de créer une page avec A
 - [x] création du projet
 - [x] création de l'app article 
 - [x] affichage de l'app article 
-- [x] ajouts d'un bouton faisant apparaitre les articles 
+- [x] ajouts d'un bouton faisant apparaitre les articles
+- [x] ajout du bandeau et stylysation
+- [x] ajout de la suppression et des détails d'un articles
+- [x] création de la pages de connexion fonctionnelle et stylisé
+- [ ] modification de l'article et ajout d'un article
