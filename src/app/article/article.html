@@ -9,16 +9,26 @@
     @for (article of articles; track article) {
       <div>
         <div class="uk-card uk-card-secondary uk-card-hover uk-card-body sdv-article-card"
-             [ngStyle]="{ 'background-image': 'url(' + article.imgPath + ')'
-           , 'background-size' : 'cover', 'background-position': 'center' }">
+             [ngStyle]="{ 'background-image': 'url(' + article.imgPath + ')',
+           'background-size' : 'cover', 'background-position': 'center' }">
           <div class="sdv-dark-overlay"></div>
           <div class="sdv-article-card-layer-2">
             <h3 class="uk-card-title">{{ article.title }}</h3>
             <p>{{ article.desc }}</p>
             <!-- Lien vers la page de détail -->
-            <button [routerLink]="['/article', article.id]">Voir l'article</button>
-            <button [routerLink]="['/modification', article.id]">modifier l'article</button>
-            <button (click)="DeleteArticle(article.id)">supprimer l'article</button>
+              <div class="uk-button-group">
+                <a [routerLink]="['/article', article.id]" class="uk-button uk-button-text uk-text-primary">
+                  <span uk-icon="icon: eye"></span> Voir
+                </a>
+                <a [routerLink]="['/modification', article.id]" class="uk-button uk-button-text uk-text-warning">
+                  <span uk-icon="icon: pencil"></span> Modifier
+                </a>
+                <button
+                  class="uk-button uk-button-text uk-text-danger"
+                  (click)="DeleteArticle(article.id)">
+                  <span uk-icon="icon: trash"></span> Supprimer
+                </button>
+            </div>
           </div>
         </div>
       </div>

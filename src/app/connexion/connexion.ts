@@ -14,8 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
 })
 export class Connexion {
 
-  email: string = 'tata@gmail.com';
-  password: string = '123456';
+  email: string = '';
+  password: string = '';
   message: string = '';
 
   constructor(private articleService: ArticlesService) {}

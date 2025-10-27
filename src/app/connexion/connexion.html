@@ -8,14 +8,14 @@
             <form>
               <div class="uk-margin">
                 <div class="uk-inline uk-width-1-1">
-                  <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                  <input class="uk-input uk-form-large" [(ngModel)]="this.email " name="email" type="text">
+                  <span class="uk-form-icon"  uk-icon="icon: mail"></span>
+                  <input class="uk-input uk-form-large" [(ngModel)]="this.email " name="email" type="text" placeholder="mail">
                 </div>
               </div>
               <div class="uk-margin">
                 <div class="uk-inline uk-width-1-1">
                   <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                  <input class="uk-input uk-form-large"[(ngModel)]="this.password" name="password" type="password">
+                  <input class="uk-input uk-form-large"[(ngModel)]="this.password" name="password" type="password" placeholder="password">
                 </div>
               </div>
               <div class="uk-margin">
@@ -23,6 +23,7 @@
                 <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" (click)="onLogin()">Login</button>
               </div>
               <div class="uk-text-small uk-text-center">
+                You forgot your password? <a class="uk-link"href="#">Forgot password</a><br>
                 Not registered? <a class="uk-link" href="inscription">Sign in</a>
               </div>
             </form>
