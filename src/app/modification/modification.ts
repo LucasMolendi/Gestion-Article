@@ -18,7 +18,7 @@ export class Modification implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private articlesService: ArticlesService  // <-- injection classique
+    private articlesService: ArticlesService
   ) {}
 
   ngOnInit(): void {
@@ -26,14 +26,17 @@ export class Modification implements OnInit {
   }
 
   sendFormData() {
+    if (this.articleId) {
+      this.articles.id = this.articleId;
+    }
+
     this.articlesService.saveArticle(this.articles).subscribe({
       next: () => {
-        this.message = 'Article mis à jour ou créé avec succès 🎉';
-        setTimeout(() => this.router.navigate(['/articles']), 2000);
+        this.router.navigate(['/articles']), 2000;
       },
       error: (err) => {
         console.error('Erreur:', err);
-        this.message = 'Erreur lors de l’enregistrement de l’article';
+
       }
     });
   }

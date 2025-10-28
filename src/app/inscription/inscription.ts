@@ -32,7 +32,6 @@ export class Inscription {
     const pwd = (this.user.password || '').trim();
     const pwdConfirm = (this.user.passwordConfirm || '').trim();
 
-    // Vérification des mots de passe
     if (pwd !== pwdConfirm) {
       this.passwordMismatch = true;
       this.message = 'Les mots de passe ne correspondent pas.';
@@ -41,18 +40,13 @@ export class Inscription {
 
     this.passwordMismatch = false;
 
-    // Appel API d'inscription
     this.articleService.RegisterUser(this.user).subscribe({
       next: (response: any) => {
         if (response.code === '200') {
-          this.message = 'Inscription réussie 🎉';
           window.location.href = 'http://localhost:4200/connexion';
-        } else {
-          this.message = 'Erreur : ' + (response.message || 'inscription échouée');
-        }
+        } else {}
       },
       error: (err) => {
-        this.message = 'Erreur réseau ou serveur';
         console.error('Erreur:', err);
       }
     });

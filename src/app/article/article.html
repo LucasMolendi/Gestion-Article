@@ -3,9 +3,13 @@
   <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-medium-bottom" (click)="onClickCallApi()">Appel
     API
   </button>
+  <a href="Ajout" class="uk-button uk-button-add">
+    ➕ Ajouter un article
+  </a>
+
 
   <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
-    <!-- boucle for pour creer les articles -->
+    <!-- boucle for pour créer les articles -->
     @for (article of articles; track article) {
       <div>
         <div class="uk-card uk-card-secondary uk-card-hover uk-card-body sdv-article-card"
@@ -15,7 +19,6 @@
           <div class="sdv-article-card-layer-2">
             <h3 class="uk-card-title">{{ article.title }}</h3>
             <p>{{ article.desc }}</p>
-            <!-- Lien vers la page de détail -->
               <div class="uk-button-group">
                 <a [routerLink]="['/article', article.id]" class="uk-button uk-button-text uk-text-primary">
                   <span uk-icon="icon: eye"></span> Voir

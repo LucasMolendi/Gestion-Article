@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {Inscription} from './inscription';
+import { MdpOublie } from './mdp-oublie';
 
-describe('Inscription', () => {
-  let component: Inscription;
-  let fixture: ComponentFixture<Inscription>;
+describe('MdpOublie', () => {
+  let component: MdpOublie;
+  let fixture: ComponentFixture<MdpOublie>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Inscription]
+      imports: [MdpOublie]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Inscription);
+    fixture = TestBed.createComponent(MdpOublie);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

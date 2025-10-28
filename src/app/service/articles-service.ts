@@ -5,13 +5,13 @@ import { Observable } from 'rxjs';
 export class ArticleDef {
   id?: string;
   title: string = '';
-  description: string = '';
+  desc: string = '';
   author: string = '';
-  image: string = '';
+  imgPath: string = '';
 }
 
 @Injectable({
-  providedIn: 'root'  // <-- important pour que le service soit global
+  providedIn: 'root'
 })
 export class ArticlesService {
   constructor(private http: HttpClient) {}

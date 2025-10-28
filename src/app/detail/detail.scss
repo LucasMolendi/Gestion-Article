@@ -1,0 +1,40 @@
+.article-detail {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-style: italic;
+  color: #555;
+}
+
+.description {
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #5bb75b;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
