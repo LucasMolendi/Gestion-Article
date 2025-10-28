@@ -1,20 +1,37 @@
-<div class="uk-container">
-  <h2>Modification de l'article {{articleId}}</h2>
-  <div class="uk-margin">
-    <h3>Title</h3>
-    <input class="uk-input" [(ngModel)]="articles.title" type="text">
-  </div>
-  <div class="uk-margin">
-    <h4>author</h4>
-    <input class="uk-input" [(ngModel)]="articles.author"  type="text">
-  </div>
-  <div class="uk-margin">
-    <h4>description</h4>
-    <input class="uk-input" [(ngModel)]="articles.description" type="text">
-  </div>
-  <div class="uk-margin">
-    <h4>image</h4>
-    <input class="uk-input" [(ngModel)]="articles.image" type="link">
-  </div>
-  <button class="uk-button uk-button-primary uk-width-1-1">envoyer les données</button>
+<div class="form-container">
+
+  <a class="back-link" href="articles">
+    ← Retour
+  </a>
+
+  <h2>Modifier l'article {{articleId}} </h2>
+
+  <form (ngSubmit)="sendFormData()">
+
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input id="title" type="text" [(ngModel)]="articles.title" name="title" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" [(ngModel)]="articles.description" name="description" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="author">Auteur</label>
+      <input id="author" type="text" [(ngModel)]="articles.author" name="author"/>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image URL</label>
+      <input id="image" type="text" [(ngModel)]="articles.image" name="image"/>
+    </div>
+
+    <!-- Bouton centré et plus bas -->
+    <div class="form-submit">
+      <button type="submit" class="uk-button">Enregistrer</button>
+    </div>
+
+  </form>
 </div>

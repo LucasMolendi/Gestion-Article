@@ -1,32 +1,40 @@
-import { Component,OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ArticlesService, ArticleDef } from '../service/articles-service';
 
-
-export class Articles {
-  title : string = ""
-  description : string = ""
-  author : string = ""
-  image : string = ""
-}
 @Component({
   selector: 'app-modification',
-  imports: [
-    FormsModule
-  ],
-
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './modification.html',
-  styleUrl: './modification.scss'
+  styleUrls: ['./modification.scss']
 })
-export class Modification implements OnInit{
+export class Modification implements OnInit {
   articleId: string | null = null;
+  public articles: ArticleDef = new ArticleDef();
+  public message: string = '';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private articlesService: ArticlesService  // <-- injection classique
+  ) {}
 
   ngOnInit(): void {
-    // Récupère l'ID depuis l'URL
     this.articleId = this.route.snapshot.paramMap.get('id');
   }
-  public articles = new Articles();
-}
 
+  sendFormData() {
+    this.articlesService.saveArticle(this.articles).subscribe({
+      next: () => {
+        this.message = 'Article mis à jour ou créé avec succès 🎉';
+        setTimeout(() => this.router.navigate(['/articles']), 2000);
+      },
+      error: (err) => {
+        console.error('Erreur:', err);
+        this.message = 'Erreur lors de l’enregistrement de l’article';
+      }
+    });
+  }
+}

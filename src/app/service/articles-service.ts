@@ -1,26 +1,38 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {User} from '../inscription/inscription';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export class ArticleDef {
+  id?: string;
+  title: string = '';
+  description: string = '';
+  author: string = '';
+  image: string = '';
+}
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'  // <-- important pour que le service soit global
 })
 export class ArticlesService {
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getArticles(): Observable<any> {
     return this.http.get<any>("http://localhost:3000/articles");
   }
+
   DeleteArticle(id: number): Observable<any> {
     return this.http.delete(`http://localhost:3000/articles/${id}`);
   }
-  SendId(email: string, password: string){
-    return this.http.post('http://localhost:3000/login', {email, password});
+
+  SendId(email: string, password: string): Observable<any> {
+    return this.http.post('http://localhost:3000/login', { email, password });
   }
-  RegisterUser(user: User): Observable<any> {
-    console.log('📤 Données envoyées:', user);
+
+  RegisterUser(user: any): Observable<any> {
     return this.http.post(`http://localhost:3000/signup`, user);
+  }
+
+  saveArticle(article: ArticleDef): Observable<any> {
+    return this.http.post('http://localhost:3000/articles/save', article);
   }
 }
