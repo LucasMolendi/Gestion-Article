@@ -20,6 +20,7 @@ export class ArticlesService {
     return this.http.post('http://localhost:3000/login', {email, password});
   }
   RegisterUser(user: User): Observable<any> {
+    console.log('📤 Données envoyées:', user);
     return this.http.post(`http://localhost:3000/signup`, user);
   }
 }
