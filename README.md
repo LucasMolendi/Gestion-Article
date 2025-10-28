@@ -1,32 +1,61 @@
 # Framework JS
-## Fonctionnement :
-Les app et services se trouves dans app qui se trouve dans src. <br>
-**API** :[ici](https://github.com/Chocolaterie/ApiArticle) <br>🔗
-Nécesite Angular 20 (ou supérieur)⚙️ <br>
-Ainsi que les dépendances npm:
--  installation dépendance ``npm install`` 📦
--  allez dans le dossier API:
-    - Via l'invite de commande
-    - En tappant cmd dans le chemin de lexplorateur de fichier windows   
--  lancer le serveur``npm start``▶️ <br>
 
-L'API est prévu pour envoyer le serveur sur le port 3000 [cf.doc](https://github.com/Chocolaterie/ApiArticle)🚀
-## Explication projet:
-Projet fait lors du module Framework JS en B2 a SUP DE VINCI Nantes. Ou l'objectif était de faire une application web fonctionnelle faisant appelle a une API. <br>
-Voir le sujet : [sujet](https://chocolaterie.github.io/documentation/docs/js-avance/project/project-angular/)📚
-## Gestion article 📝
-création d'une project gestion article qui a pour but de créer une page avec Angular CLI et un API externe contenant des articles et des users🧾👥
+## Fonctionnement
 
-- [x] création du projet
-- [x] création de l'app article 
-- [x] affichage de l'app article 
-- [x] ajouts d'un bouton faisant apparaitre les articles
-- [x] ajout du bandeau et stylysation
-- [x] ajout de la suppression et des détails d'un articles
-- [x] création de la pages de connexion fonctionnelle et stylisé
-- [x] création de la page inscrtiption fonctionnelle et stylisé
-- [x] création du formulaire de modification d'article stylisé
-- [ ] rendre fonctionnelle le formulaire de modification
-- [ ] création d'un formulaire d'ajout d'article stylisé
-- [ ] formulaire d'ajout fonctionnelle
-- [ ] page de mot de passe oubliée
+Les apps et services se trouvent dans `app` qui se trouve dans `src`.
+
+**API** : [ici](https://github.com/Chocolaterie/ApiArticle) 🔗
+
+Nécessite Angular 20 (ou supérieur) ⚙️
+
+Ainsi que les dépendances npm :
+
+* Installation des dépendances : `npm install` 📦
+* Aller dans le dossier API :
+
+  * Via l'invite de commande
+  * En tapant `cmd` dans le chemin de l'explorateur de fichiers Windows
+* Lancer le serveur : `npm start` ▶️
+
+L'API est prévue pour lancer le serveur sur le port 3000. [cf. doc](https://github.com/Chocolaterie/ApiArticle) 🚀
+
+---
+
+## Explication du projet
+
+Projet réalisé lors du module Framework JS en B2 à SUP DE VINCI Nantes.
+L'objectif était de créer une application web fonctionnelle faisant appel à une API.
+
+Voir le sujet : [sujet](https://chocolaterie.github.io/documentation/docs/js-avance/project/project-angular/) 📚
+
+---
+
+## Gestion des articles 📝
+
+Création d’un projet de gestion d’articles qui permet de créer une page avec Angular CLI et une API externe contenant des articles et des utilisateurs 🧾👥
+
+✅ Liste des fonctionnalités :
+
+* [x] Création du projet
+* [x] Création de l'app article
+* [x] Affichage de l'app article
+* [x] Ajout d'un bouton faisant apparaître les articles
+* [x] Ajout du bandeau et stylisation
+* [x] Ajout de la suppression et des détails d'un article
+* [x] Création de la page de connexion fonctionnelle et stylisée
+* [x] Création de la page inscription fonctionnelle et stylisée
+* [x] Création du formulaire de modification d'article stylisé
+* [x] Rendre fonctionnel le formulaire de modification
+* [x] Création d'un formulaire d'ajout d'article stylisé
+* [x] Formulaire d'ajout fonctionnel
+* [x] Page de mot de passe oubliée
+
+---
+
+## Erreurs restantes ⚠️
+
+Il reste cependant quelques points qui n'ont pu être finalisés, soit par manque de temps, soit par manque de connaissances :
+
+* Lors de la modification d'un article, si une case est laissée vide, le champ sera supprimé et non laissé tel quel.
+* Quand la fonction "mot de passe oublié" est utilisée, le compte ne peut plus se connecter, car le mot de passe ne peut être renvoyé depuis l'API et est généré par l'API.
+* Le bouton appel API dans la page articles ne disparaît pas une fois cliqué.
