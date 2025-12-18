@@ -1,6 +1,6 @@
 <div *ngIf="article; else noArticle">
   <h2>{{ article.title }}</h2>
-  <p>✍️ Auteur : {{ article.author }}</p>
+  <p>Auteur : {{ article.author }}</p>
   <img *ngIf="article.imgPath" [src]="article.imgPath" alt="{{ article.title }}">
   <p>{{ article.desc }}</p> <!-- desc au lieu de description -->
   <a [routerLink]="['/articles']">← Retour aux articles</a>
